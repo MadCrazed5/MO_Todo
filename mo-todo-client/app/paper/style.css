@@ -1,0 +1,13 @@
+.first {
+    margin-right: 10 px;
+   /* justify-content:space-around;
+    display: flex;
+    */
+}
+
+.overlord {
+    width: 50;
+    font-size: small;
+    display: flex;
+    text-align: center;
+}
