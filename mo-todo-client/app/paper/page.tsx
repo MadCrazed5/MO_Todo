@@ -1,26 +1,30 @@
 'use client'
 import type { Metadata } from 'next'
-import { Checkbox } from '@material-ui/core'
+import { Button, Checkbox, Link } from '@material-ui/core'
 import './style.css'
+import { useRouter } from 'next/navigation'
 
 
 export default function Page() {
-    const x: string = "|";
+
+     const rout = useRouter();
     return (
-        <div className='overlord'>
-            <div className='first'>
-                Magnus
-                                 
-                <Checkbox color = "secondary"></Checkbox>
-            </div>
-            <div>
-                papulatus
-                <Checkbox color = "primary"></Checkbox>
-            </div>   
-            <div>
-                Vhilla
-                <Checkbox color = "default"></Checkbox>
-            </div>
+
+        <div>
+            <h1 className='heading_1'>
+                Maplestory Boss Tracker
+            </h1>
+            
+            
+            <Button onClick={ () => rout.push('/paper/page1')}>
+            
+            Select Bosses That have Been Recently Cleared
+            </Button>
+            <br></br>
+            <Button onClick={ () => rout.push('/paper/paper2')}>
+            Check Status of Bosses Cleared
+            </Button>
+            
 
         </div>
     )

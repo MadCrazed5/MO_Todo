@@ -1,7 +1,21 @@
 
+.first {
+    
+    
+    display: inline-block;
+    text-indent: 20%;
+    margin-right: 5%; 
+}
+
+.overlord {
+   
+    
+    margin-top: 10%;
+    margin-left:5%;
+   
+    
+}
 .heading_1{
-      margin-top: 10%;
-      margin-left: 30%;
       font-size: larger;
       margin-bottom: 10%;
       color: brown;
