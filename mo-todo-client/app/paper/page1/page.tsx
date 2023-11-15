@@ -1,73 +1,36 @@
 'use client'
 import type { Metadata } from 'next'
-import { Checkbox, Link } from '@material-ui/core'
+import { Button, Checkbox, Link, } from '@material-ui/core'
 import './style.css'
+import { useRouter } from 'next/router'
+import Homep from '../../_components/Home'
+import { Component, useEffect, useState } from 'react'
+import Record from '../../_components/Record'
+import LoginDetails from '../../_components/GetData'
+import {useSearchParams} from 'next/navigation'
 
 
 
-export default function Page() {
+const Paper: React.FC = () => {
+
     
-    let checked = "true"
+
+    
+     const rout = useSearchParams();
+     const v1 = rout.get('value1') as String;
+     const v2 = rout.get('value2') as String;
+
+     
+     
     return (
 
-        <div className='overlord'>
+        <div>
             <div>
-               <h1 className='heading_1'>
-                Maplestory Todo List
-               </h1>
+             <LoginDetails username={v1} password={v2} />
             </div>
-            <line>
-            <Link href = "/paper" >
-                       Go back
-                 </Link>
-            </line>
-            <div>
-                Will
-
-                <div className='first'>
-                    <Checkbox color="secondary" className='first'></Checkbox>
-                </div>
-                
-
-            </div>
-
-            <div>
-                Lotus
-                <div className='first'>
-                    <Checkbox color="primary"></Checkbox>
-                </div>
-            </div>
-            <div>
-                Vhilla
-                <div className='first'>
-                    <Checkbox color="default"></Checkbox>
-                </div>
-            </div>
-            <div>
-                Gloom
-                <div className='first'>
-                    <Checkbox color="primary"></Checkbox>
-                </div>
-            </div>
-            <div>
-                Darknell
-                <div className='first'>
-                    <Checkbox color="primary"></Checkbox>
-                </div>
-            </div>
-            <div>
-                Lucid
-                <div className='first'>
-                    <Checkbox color="primary"></Checkbox>
-                </div>
-            </div>
-            <div>
-                Damien
-                <div className='first'>
-                    <Checkbox color="primary"></Checkbox>
-                </div>
-            </div>
-
+            
+               
         </div>
     )
 }
+export default Paper

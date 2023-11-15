@@ -1,0 +1,44 @@
+.heading_1{
+    margin-top: 10%;
+    margin-left: 30%;
+    font-size: larger;
+    margin-bottom: 10%;
+    color: brown;
+    font-style: oblique;
+    text-decoration-line: underline;
+    text-decoration-color: blue;
+
+}
+.paper_links{
+ font-style: italic;
+ display:block;
+ margin-left: 20%;
+ margin-top: 15%;
+ text-indent: 10%;
+ text-transform: capitalize;
+
+}
+.title_1{
+
+  display: inline-flex;
+  text-decoration-line: underline;
+  text-decoration: color(red);
+  margin-left: 50%;
+    
+}
+.first {
+    
+    
+    display: inline-block;
+    text-indent: 20%;
+    margin-right: 5%; 
+}
+
+.overlord {
+   
+    
+    margin-top: 10%;
+    margin-left:5%;
+   
+    
+}
