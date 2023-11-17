@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Button, Checkbox, } from '@material-ui/core'
 import './style.css'
 import { useRouter } from 'next/router'
-import Homep from '../_components/Home'
+
 import { Component, useState } from 'react'
 import Record from '../_components/Record'
 import Login from '../_components/GetData'

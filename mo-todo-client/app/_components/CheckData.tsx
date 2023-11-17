@@ -5,6 +5,8 @@ import React from 'react'
 
 interface logincomp{
    
+   BossName: String;
+
    
    username:String;
    password:String;
@@ -13,12 +15,12 @@ interface logincomp{
 
 
 
-const LoginDetails: React.FC<logincomp> = ({username,password}) => {
+export const CheckifExist  = (BossName:string,username:string,password:string): boolean => {
    // console.log(supabase);
    const [firstTableData, setFirstTableData] = useState<any[]>([]);
    // State for the second table data
    const [secondTableData, setSecondTableData] = useState<any[]>([]);
- 
+   const [isPresent, setisPresent] = useState<boolean>(false);
    useEffect(() => {
      // Fetch data from the first table
      const fetchFirstTableData = async () => {
@@ -47,8 +49,9 @@ const LoginDetails: React.FC<logincomp> = ({username,password}) => {
     const fetchSecondTableData = async () => {
       const { data: secondTableResponse, error: secondTableError } = await supabase
         .from('Bosses')
-         .select('*')
-         .eq('user_id',idsFromFirstTable)
+        .select('Name')
+        .eq('Name',BossName)
+        .eq('user_id',idsFromFirstTable)
       if (secondTableError) {
         console.error('Error inserting data', secondTableError.message);
       } else {
@@ -61,23 +64,16 @@ const LoginDetails: React.FC<logincomp> = ({username,password}) => {
     if (idsFromFirstTable.length > 0) {
       fetchSecondTableData();
     }
-  }, [firstTableData]); // Run the effect when firstTableData changes
+  }, [firstTableData,BossName]); // Run the effect when firstTableData changes
 
-  
-    return (
-        <div>
-            
-               
-                {secondTableData && (<div>{secondTableData.map((item) => (
-                    <p key={item.id}>
-                        {item.Name}{"=> "}{item.mesos}
-
-                    </p>))}</div>)}
-            
-        </div>
-    )
+  if (secondTableData.length > 0) {
+       setisPresent(false);
+       return isPresent;
+  }
+     setisPresent(false);
+    return isPresent
 }
-export default LoginDetails
+
 
 
 

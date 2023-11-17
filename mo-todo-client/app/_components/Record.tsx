@@ -1,74 +1,45 @@
 'use client'
 import type { Metadata } from 'next'
-import { Checkbox, Link } from '@material-ui/core'
+import { Button, Checkbox, Link, } from '@material-ui/core'
 import './style.css'
+import { useRouter } from 'next/navigation'
+import Homep from '../_components/Home'
+import { Component, useEffect, useState } from 'react'
+import Record from '../_components/Record'
+import {useSearchParams} from 'next/navigation'
+import GetData from './GetData'
 
 
+interface l{
+    username: String
+    password: String
+}
 
-const Record: React.FC = () => {
+
+const BossC: React.FC<l> = ({username,password}) => {
     
-    let checked = "true"
+      const handlebutton= () =>{
+         <GetData username = {username} password={password}/>
+
+         
+      }
     return (
 
-        <div className='overlord'>
+        <div>
             <div>
-               <h1 className='heading_1'>
-                Available Bosses to Record
-               </h1>
-            </div>
-            <line>
-            <Link href = "/paper" >
-                       Go back
-                 </Link>
-            </line>
-            <div>
-                Will
-
-                <div className='first'>
-                    <Checkbox color="secondary" className='first'></Checkbox>
-                </div>
-                
-
-            </div>
-
-            <div>
-                Lotus
-                <div className='first'>
-                    <Checkbox color="primary"></Checkbox>
-                </div>
+                <Button onClick={handlebutton}>
+                    Check Cleared Bosses
+                </Button>    
             </div>
             <div>
-                Vhilla
-                <div className='first'>
-                    <Checkbox color="default"></Checkbox>
-                </div>
+            <Button>
+                    Record Cleared Bosses
+                </Button>  
             </div>
-            <div>
-                Gloom
-                <div className='first'>
-                    <Checkbox color="primary"></Checkbox>
-                </div>
-            </div>
-            <div>
-                Darknell
-                <div className='first'>
-                    <Checkbox color="primary"></Checkbox>
-                </div>
-            </div>
-            <div>
-                Lucid
-                <div className='first'>
-                    <Checkbox color="primary"></Checkbox>
-                </div>
-            </div>
-            <div>
-                Damien
-                <div className='first'>
-                    <Checkbox color="primary"></Checkbox>
-                </div>
-            </div>
-
+            
+               
         </div>
     )
 }
-export default Record
+
+export default BossC
